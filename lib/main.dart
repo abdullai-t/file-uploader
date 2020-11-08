@@ -36,7 +36,7 @@ class _ImageUploadState extends State<ImageUpload> {
   final picker = ImagePicker();
   String _uploadedFileURL;
 
-  Future pick_and_upload_image() async {
+  Future pickImage() async {
     final pickedImage = await picker.getImage(source: ImageSource.gallery);
     setState(() {
       if (pickedImage != null) {
@@ -82,7 +82,7 @@ class _ImageUploadState extends State<ImageUpload> {
             _image == null
                 ? RaisedButton(
                     child: Text('Choose File'),
-                    onPressed: pick_and_upload_image,
+                    onPressed: pickImage,
                     color: Colors.cyan,
                   )
                 : Container(),
